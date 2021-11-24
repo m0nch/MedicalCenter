@@ -19,17 +19,20 @@ namespace MC
             staffRepository.Add(new Nurse("Anna", 25));
             //staffRepository.Add(new Doctor("John", 30, "Traumatology"));
 
+            List<Doctor> doctors = new List<Doctor>();
             string name = "John";
             int age = default(int);
             for (int i = 0; i < doctorsSpeciality.Count; i++)
             {
                 age = rnd.Next(25, 55);
                 staffRepository.Add(new Doctor(name + i, age, doctorsSpeciality[i]));
+                doctors.Add(new Doctor(name + i, age, doctorsSpeciality[i]));
                 Console.WriteLine($"Doctor name: {name + i}, age: {age}, speciality: {doctorsSpeciality[i]}");
             }
 
-
             //BaseRepository<Doctor> doctors = new BaseRepository<Doctor>();
+
+            staffRepository.Remove(doctors[3]);
             //doctors.Add()
             //doctors.GetAll();
 
